@@ -39,7 +39,7 @@ class Capture::SaveImages
   end
 
   def base_urls(path)
-    capture.domain + path unless capture.domain.nil?
+    capture.base_domain + path unless capture.base_domain.nil?
   end
 
   def file_names(width, label, domain_label)
@@ -51,7 +51,7 @@ class Capture::SaveImages
       base_url = base_urls(path)
       
       capture.widths.each do |width|
-        base_file_name = file_names(width, label, capture.domain)    
+        base_file_name = file_names(width, label, capture.domain_label)    
         capture.capture_page_image engine, base_url, width, base_file_name unless base_url.nil?
       end
     end

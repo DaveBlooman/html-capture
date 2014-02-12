@@ -23,6 +23,14 @@ class Capture::Capture
     @config['domain']
   end
 
+  def base_domain
+    domain[domain_label]
+  end
+
+  def domain_label
+    domain.keys[0]
+  end
+
   def paths
     @config['paths']
   end
@@ -32,6 +40,6 @@ class Capture::Capture
   end
 
   def capture_page_image(browser, url, width, file_name)
-    puts `"#{browser}" #{@config['phantomjs_options']} "#{snap_file}" "#{url}" "#{width}" "#{file_name}"`
+    puts `"#{browser}" #{@config['phantomjs_options']} "#{snap_file}" "#{url}" "#{width}" > "#{file_name}"`
   end
 end
