@@ -12,25 +12,13 @@ class Capture::FolderManager
     capture.directory
   end
 
-  def paths
-    capture.paths
-  end
-
-  def spider_paths
-    if !paths
-      puts "no paths set"
-    else
-      capture.paths
-    end
-  end
-
   def clear_shots_folder
     FileUtils.rm_rf("./#{dir}")
     FileUtils.mkdir("#{dir}")
   end
 
   def create_folders
-    spider_paths.each do |folder_label, path|
+    capture.paths.each do |folder_label, path|
       FileUtils.mkdir("#{dir}/#{folder_label}")
     end
     puts 'Creating Folders'

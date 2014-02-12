@@ -32,7 +32,7 @@ class Capture::CLI < Thor
 
   desc "html", "captures screenshots"
   def html(config_name)
-    html = Capture::SaveImages.new(config_name)
+    html = Capture::SavePage.new(config_name)
     html.save_html
   end
 
