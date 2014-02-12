@@ -6,9 +6,9 @@ browser:
 #If you want to have multiple snapping files, set the file name here
 snap_file: "lib/capture/javascript/snap.js"
 
-# Type the name of the directory that shots will be stored in
+# Type the name of the directory that pages will be stored in
 directory:
-  - 'shots'
+  - 'pages'
 
 # Add only 2 domains, key will act as a label
 domain:
@@ -18,9 +18,9 @@ domain:
 screen_widths:
   - 320
   - 600
-  # - 768
+  - 768
   - 1024
-  # - 1280
+
 
 #Type page URL paths below, here are a couple of examples
 paths:

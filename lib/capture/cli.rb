@@ -36,8 +36,8 @@ class Capture::CLI < Thor
     html.save_html
   end
 
-  desc "capture config_name", "A full capture job"
-  def capture(config)
+  desc "page config_name", "A full capture job"
+  def page(config)
     reset_shots(config)
     setup_folders(config)
     html(config)
